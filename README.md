@@ -39,6 +39,7 @@ social_network_processes/
 ├── generate_logs_spain_thailand.py       # Used to generate event logs from the Spain and Thailand datasets
 ├── generate_logs_uae_honduras.py       # Used to generate event logs from the UAE and Honduras datasets
 ├── generate_petri_nets.py      # Used to discover the Petri nets from an event log
+├── split_log_behaviours.py      # Used to extract the coordinated and uncoordinated behaviors from an uncoordinated Petri net
 │
 ├── requirements.txt            # List of required Python packages
 └── README.md                   # Project description and instructions  
@@ -55,13 +56,15 @@ To obtain the results from our paper, follow these steps.
 3. Pass the UAE and Honduras datasets through `generate_logs_uae_honduras.py`. For UAE use `trim_length = 10` and `log_length = 300`. For Honduras use `trim_length = 10` and `log_length = 400` (these variables are already set depending on which dataset is passed).
 4. Pass the Spain and Thailand datasets through `generate_logs_spain_thailand.py`. For Spain use `trim_length = 10` and `log_length = 3000`. For Thailand use `trim_length = 10` and `log_length = 1500` (these variables are already set).
 5. Pass the Brazil dataset through `generate_logs_brazil.py`. Use `trim_length = 10` and `log_length = 200` (these variables are already set).
-6. Use `generate_petri_nets.py` to discover Petri nets for each of the six event logs generated in steps 2 and 3.
+6. Use `generate_petri_nets.py` to discover Petri nets for each of the six event logs generated in steps 2, 3 and 4.
 7. Use `calculate_centrality.py` to calculate the centrality measures of the Petri nets.
 8. Use `calculate_diameter.py` to calculate the diameter of the Petri nets.
 9. Use `calculate_density.py` to calculate the density of the Petri nets.
 10. Use `calculate_ks_entropy.py` to calculate the KS entropy.
 11. Use `calculate_mean_waiting_time.py` to generate a plot comparing the mean waiting time for uncoordinated and coordinated datasets.
 12. Use `calculate_constructs.py` to calculate the number of XOR and AND gates from the discovered process trees.
+13. Use `split_log_behaviours.py` to extract an event log and Petri net describing the different user behaviors from an uncoordinated Petri net.
+14. Repeat steps 7-12 to calculate different metrics for these split behavior Petri nets.
 
 
 ## Usage
